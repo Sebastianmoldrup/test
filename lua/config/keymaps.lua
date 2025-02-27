@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 
 -- GLOBAL VIM
-local set = vim.keympa.set
+local set = vim.keymap.set
 
 -- SCREEN MOVEMENT
 set("n", "N", "Nzzzv")
