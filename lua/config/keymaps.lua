@@ -2,6 +2,19 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- GLOBAL VIM
+local set = vim.keympa.set
+
+-- SCREEN MOVEMENT
+set("n", "N", "Nzzzv")
+set("n", "n", "nzzzv")
+set("n", "<c-d>", "<c-d>zz")
+set("n", "<c-u>", "<c-u>zz")
+
+-- SAVE BUFFER
+vim.keymap.set({ "n", "i" }, "<D-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
+
+-- HARPOON KEYMAPS
 local harpoon = require("harpoon")
 
 -- REQUIRED
@@ -35,3 +48,7 @@ end)
 vim.keymap.set("n", "<C-S-N>", function()
   harpoon:list():next()
 end)
+
+-- HOP KEYMAPS
+set("n", "f", ":HopWord<CR>", { silent = true })
+set("n", "F", ":HopPatternCurrentLine<CR>", { silent = true })
