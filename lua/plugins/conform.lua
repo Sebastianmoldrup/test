@@ -2,22 +2,22 @@ return {
   "stevearc/conform.nvim",
   optional = true,
   opts = function(_, opts)
-    opts.format_on_save = opts.format_on_save or {}
-    opts.formatters_by_ft = opts.formatters_by_ft or {}
-    opts.formatters = opts.formatters or {}
+    local formatters = opts.formatters_by_ft or {}
 
-    -- Formatters by file type
-    opts.formatters_by_ft.javascript = { "prettier" }
-    opts.formatters_by_ft.typescript = { "prettier" }
-    opts.formatters_by_ft.jsx = { "prettier" }
-    opts.formatters_by_ft.tsx = { "prettier" }
-    opts.formatters_by_ft.html = { "prettier" }
-    opts.formatters_by_ft.css = { "prettier" }
-    opts.formatters_by_ft.tailwindcss = { "prettier" }
-    opts.formatters_by_ft.php = { "prettier_php" }
+    formatters.javascript = { "prettier" }
+    formatters.typescript = { "prettier" }
+    formatters.jsx = { "prettier" }
+    formatters.tsx = { "prettier" }
+    formatters.html = { "prettier" }
+    formatters.css = { "prettier" }
+    formatters.tailwindcss = { "prettier" }
+    formatters.php = { "prettier_php" }
+    formatters.lua = { "stylua" }
+    formatters.fish = { "fish_indent" }
+    formatters.sh = { "shfmt" }
 
     -- Prettier PHP custom config
-    opts.formatters.prettier_php = {
+    formatters.prettier_php = {
       command = "prettier",
       args = {
         "--plugin="
