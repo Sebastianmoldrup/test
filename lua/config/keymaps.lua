@@ -52,3 +52,6 @@ end)
 -- HOP KEYMAPS
 set("n", "f", ":HopWord<CR>", { silent = true })
 set("n", "F", ":HopPatternCurrentLine<CR>", { silent = true })
+
+-- Identation
+set("i", "<C-d>", '<CR><CR><UP><ESC>"_cc')

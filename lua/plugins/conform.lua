@@ -15,6 +15,7 @@ return {
     formatters.lua = { "stylua" }
     formatters.fish = { "fish_indent" }
     formatters.sh = { "shfmt" }
+    formatters.md = { "prettier" }
 
     -- Prettier PHP custom config
     formatters.prettier_php = {
